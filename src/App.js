@@ -1,21 +1,33 @@
 import { useState } from 'react';
 import './App.css';
-import Counter from './components/Counter';
-import LifeCycleClass from './components/LifeCycleClass';
-import Welcome from './components/Welcome';
-import UseStateHooks from './components/UseStateHooks';
-import UseEffectHooks from './components/UseEffectHooks';
+import { Routes, Route, Link } from 'react-router-dom';
+import Contact from './components/Contact';
+import About from './components/About';
+import Home from './components/Home';
+import { BrowserRouter } from 'react-router-dom';
+import User from './components/User';
+import NotFound from './components/NotFound';
 
 function App() {
-  const [showLifeCycle, setShowLifeCycle] = useState(true);
 
   return (
     <div className="App">
-       <nav>
-        <a href='contact'>Contact</a>
-        <a href='About'>About</a>
-        <a href='Home'>Home</a>
-       </nav>
+      <nav>
+        <ul>
+          <Link to="/contact"> Contact </Link>
+          <Link to="/about"> About </Link>
+          <Link to="/home"> Home </Link>
+          <Link to="/user/1"> User 1 </Link>
+          <Link to="/user/2"> User 2 </Link>
+       </ul>
+      </nav> 
+      <Routes>
+       <Route path='contact' element={<Contact />} />
+       <Route path='about' element={<About />} />
+       <Route path='home' element={<Home />} /> 
+       <Route path='user/:id' element={ <User />} />
+       <Route path='*' element={ <NotFound />} />
+      </Routes> 
     </div>
   );
 }
