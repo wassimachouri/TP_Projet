@@ -11,7 +11,11 @@ function App() {
 
   return (
     <div className="App">
-        <UseEffectHooks />
+       <nav>
+        <a href='contact'>Contact</a>
+        <a href='About'>About</a>
+        <a href='Home'>Home</a>
+       </nav>
     </div>
   );
 }
