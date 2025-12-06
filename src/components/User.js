@@ -6,7 +6,7 @@ function User() {
     return (
         <div>
             <h1>User Page</h1>
-            <p>Welcome, User {id}!</p>
+            <p>Welcome, Mr User {id}!</p>
         </div>
     );
 }
